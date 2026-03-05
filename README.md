@@ -56,7 +56,7 @@
 ### 🔄 RL
 | Conference | Title | Paper | Code/Page  |
 |:----------:|-------|-------|-------|
-| NeurIPS 2024 | **PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning** | [arXiv 2024.05](https://arxiv.org/pdf/2405.14073) | [![stars](https://img.shields.io/github/stars/thu-ml/CEURL?logo=github)](https://github.com/thu-ml/CEURL) |
+| NeurIPS 2024 | **PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning** | [arXiv 2024.05](https://arxiv.org/pdf/2405.14073) | [![stars](https://img.shields.io/github/stars/thu-ml/ceurl?logo=github)](https://github.com/thu-ml/ceurl) |
 | ICML 2023 | **Universal Morphology Control via Contextual Modulation** | [arXiv 2023.02](https://arxiv.org/pdf/2302.11070) | [![stars](https://img.shields.io/github/stars/MasterXiong/ModuMorph?logo=github)](https://github.com/MasterXiong/ModuMorph) |
 | NeurIPS 2022 | **Low-Rank Modular Reinforcement Learning via Muscle Synergy** | [arXiv 2022.10](https://arxiv.org/pdf/2210.15479) | [![stars](https://img.shields.io/github/stars/drdh/Synergy-RL?logo=github)](https://github.com/drdh/Synergy-RL) |
 | ICML 2022 | **AnyMorph: Learning Transferable Polices By Inferring Agent Morphology** | [arXiv 2022.06](https://arxiv.org/pdf/2206.12279) | [![stars](https://img.shields.io/github/stars/montrealrobotics/AnyMorph?logo=github)](https://github.com/montrealrobotics/AnyMorph) |
