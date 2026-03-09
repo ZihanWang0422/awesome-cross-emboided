@@ -5,6 +5,43 @@
 
 ## Cross-emboided
 
+
+| Paper Title | Feature Input | Terrain Input | Networks | Training set | OOD Type | Transfer Capability(seen - training set/unseen - test set) |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **EAGLE** | Morphology Encoder | ❌ | PPO (Distillation) | **In-Class** (Humanoid) | ❌ | zero-shot to seen humanoid |
+| **XHugWBC** | Morphology Encoder | ❌ | GCN / Transformer | **In-Class** (Humanoid) | Morpho OOD | zero-shot to unseen humanoid |
+| **LocoFormer** | State-action Encoder | ❌ | Transformer-XL | **Cross-Class** (Quad/Hum) | Morpho/Dyna OOD | Zero-shot to unseen biped/quad/wheels |
+| **UniLegs** | State-action Encoder | ❌ | PPO / Transformer | **Cross-Class** (Quad/Eight-legs) | ✅ | zero-shot to unseen quadruped |
+| **Multi-Loco** | State-action Encoder | ❌ | Multi-AC/Diffusion Model | **Cross-Class** (Quad/Bip/Hum) |  Morpho/Terrain OOD | Zero-shot to unseen quadruped |
+| **Embodiment Scaling Laws**  | Morphology Encoder | ❌ | URMA (Attention-based) | **Cross-Class** (Quad/Hex/Hum) | Morpho/Dyna (Constraints) OOD| zero-shot to unseen quad/hum |
+| **One Policy to Run Them All** | Morphology Encoder | ❌ | URMA | **Cross-Class** (Quad/Hex/Hum) | Morphology(Topology) OOD | zero-shot to unseen quadruped |
+| **MorAL** | Morphology Encoder | ❌ | PPO (Morpho Net) | **In-Class** (Quadruped) | Terrain/ Dyna(mass) OOD | Zero-shot to real A1/Go1 |
+| **CrossLoco** | State-action Encoder | ❌ | Skill-Conditioned RL | **Cross-Class** (Quad/Hum) | Morpho OOD(Topology) | Language2Robot |
+| **CPG-RL** (ManyQuadrupeds) | State-action Encoder | ❌ | MLP + CPG Layer | **In-Class** (Quadruped1 12/16 DoF) | Morpho (Topology) / Dynamic (mass) OOD | zero-shot to unseen quadruped |
+| **Sequence Modeling Problem** | Morphology Encoder | ❌ | Embodiment-aware Transformer | **In-Class** (Quadruped) | Morpho OOD | Zero-shot to unseen quadruped |
+| **GenLoco** | State-action Encoder | ❌ | PPO | **In-Class** (Quadruped) | Morpho (Scale) / Dyna (Motor) OOD | Zero-shot to unseen quadruped |
+
+
+* Morphology OOD: 
+  * Topology: DoF of the robot/Cross class
+  * Scale: leg/base size
+  * Kinematic: 
+    * Elbow-Up / Inward-Knee
+    * Knee-Down / Outward-Knee
+    * Elbow-Up / Knee-Down
+    * All-Knee-Down(AKD)
+
+* Dynamic OOD: 
+  * Mass Distribution: Add payload -> CoM change/Body mass
+  * Motor: stiffness/damping/friction/armature
+  * Artificial Constraints: lock some joints
+
+* Terrain OOD:
+  * Unseen Terrain:
+  * Terrain property: Friction ...
+
+
+
 ### 🐕️Locomotion
 
 | Conference | Title | Paper | Code/Page  |
@@ -16,7 +53,7 @@
 | CoRL 2025 | **Multi-Loco: Unifying Multi-Embodiment Legged Locomotion via Reinforcement Learning Augmented Diffusion** | [arXiv 2025.06](https://arxiv.org/pdf/2506.11470) | [![Website](https://img.shields.io/badge/Project-Page-blue?logo=github&logoColor=white)](https://multi-loco.github.io/) |
 | CoRL 2025 | **Towards Embodiment Scaling Laws in Robot Locomotion** | [arXiv 2025.05](https://arxiv.org/pdf/2409.06366) | [![stars](https://img.shields.io/github/stars/BoAi01/embodiment-scaling-laws?logo=github)](https://github.com/BoAi01/embodiment-scaling-laws) |
 | CoRL 2024 | **One Policy to Run Them All: an End-to-end Learning Approach to Multi-Embodiment Locomotion** | [arXiv 2024.09](https://arxiv.org/pdf/2409.06366) | [![stars](https://img.shields.io/github/stars/nico-bohlinger/one_policy_to_run_them_all?logo=github)](https://github.com/nico-bohlinger/one_policy_to_run_them_all) |
-| RA-L 2024 | **MorAL: Learning Morphologically Adaptive Locomotion Controller for Quadrupedal Robots on Challenging Terrains** | [RA-L 2024.05](https://ieeexplore-ieee-org.easyaccess2.lib.cuhk.edu.hk/abstract/document/10463132) |  |
+| RA-L 2024 | **MorAL: Learning Morphologically Adaptive Locomotion Controller for Quadrupedal Robots on Challenging Terrains** | [RA-L 2024.05](https://ieeexplore-ieee-org.easyaccess2.lib.cuhk.edu.hk/abstract/document/10463132) | [![Website](https://img.shields.io/badge/Project-Page-blue?logo=github&logoColor=white)](https://arclab-hku.github.io/MorAL_Quadruped_Robots/) |
 | ICLR 2024 | **CrossLoco: Human Motion Driven Control of Legged Robots via Guided Unsupervised Reinforcement Learning** | [arXiv 2023.10](https://arxiv.org/pdf/2310.10486v2) | [![Website](https://img.shields.io/badge/Project-Page-blue?logo=github&logoColor=white)](https://miladshafiee.github.io/ManyQuadrupeds/) |
 | ICRA 2024 | **ManyQuadrupeds: Learning a Single Locomotion Policy for Diverse Quadruped Robots** | [arXiv 2023.09](https://arxiv.org/pdf/2310.10486v2) | [![Website](https://img.shields.io/badge/Project-Page-blue?logo=github&logoColor=white)](https://miladshafiee.github.io/ManyQuadrupeds/) |
 | ICRA 2023 | **Multi-embodiment Legged Robot Control as a Sequence Modeling Problem** | [arXiv 2022.12](https://arxiv.org/pdf/2212.09078) |  |
@@ -59,6 +96,7 @@
 | NeurIPS 2024 | **PEAC: Unsupervised Pre-training for Cross-Embodiment Reinforcement Learning** | [arXiv 2024.05](https://arxiv.org/pdf/2405.14073) | [![stars](https://img.shields.io/github/stars/thu-ml/ceurl?logo=github)](https://github.com/thu-ml/ceurl) |
 | ICML 2023 | **Universal Morphology Control via Contextual Modulation** | [arXiv 2023.02](https://arxiv.org/pdf/2302.11070) | [![stars](https://img.shields.io/github/stars/MasterXiong/ModuMorph?logo=github)](https://github.com/MasterXiong/ModuMorph) |
 | NeurIPS 2022 | **Low-Rank Modular Reinforcement Learning via Muscle Synergy** | [arXiv 2022.10](https://arxiv.org/pdf/2210.15479) | [![stars](https://img.shields.io/github/stars/drdh/Synergy-RL?logo=github)](https://github.com/drdh/Synergy-RL) |
+| NeurIPS 2022 | **DMAP: a Distributed Morphological Attention Policy for Learning to Locomote with a Changing Body** | [arXiv 2022.09](https://arxiv.org/pdf/2209.14218) | [![stars](https://img.shields.io/github/stars/amathislab/dmap?logo=github)](https://github.com/amathislab/dmap) |
 | ICML 2022 | **AnyMorph: Learning Transferable Polices By Inferring Agent Morphology** | [arXiv 2022.06](https://arxiv.org/pdf/2206.12279) | [![stars](https://img.shields.io/github/stars/montrealrobotics/AnyMorph?logo=github)](https://github.com/montrealrobotics/AnyMorph) |
 | NeurIPS 2022 | **Evolution Gym: A Large-Scale Benchmark for Evolving Soft Robots** | [arXiv 2022.01](https://arxiv.org/pdf/2203.11931) | [![stars](https://img.shields.io/github/stars/EvolutionGym/evogym?logo=github)](https://github.com/EvolutionGym/evogym) |
 | ICLR 2022 | **METAMORPH: LEARNING UNIVERSAL CONTROLLERS WITH TRANSFORMERS** | [arXiv 2022.03](https://arxiv.org/pdf/2201.09863) | [![stars](https://img.shields.io/github/stars/agrimgupta92/metamorph?logo=github)](https://github.com/agrimgupta92/metamorph) |
