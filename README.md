@@ -3,44 +3,6 @@
     <a href="https://awesome.re"><img src="https://awesome.re/badge.svg"/></a>
 </div>
 
-## Cross-emboided
-
-
-| Paper Title | Feature Input | Terrain Input | Networks | Training set | OOD Type | Transfer Capability(seen - training set/unseen - test set) |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| **EAGLE** | Morphology Encoder | ❌ | PPO (Distillation) | **In-Class** (Humanoid) | ❌ | zero-shot to seen humanoid |
-| **XHugWBC** | Morphology Encoder | ❌ | GCN / Transformer | **In-Class** (Humanoid) | Morpho OOD | zero-shot to unseen humanoid |
-| **LocoFormer** | State-action Encoder | ❌ | Transformer-XL | **Cross-Class** (Quad/Hum) | Morpho/Dyna OOD | Zero-shot to unseen biped/quad/wheels |
-| **UniLegs** | State-action Encoder | ❌ | PPO / Transformer | **Cross-Class** (Quad/Eight-legs) | ✅ | zero-shot to unseen quadruped |
-| **Multi-Loco** | State-action Encoder | ❌ | Multi-AC/Diffusion Model | **Cross-Class** (Quad/Bip/Hum) |  Morpho/Terrain OOD | Zero-shot to unseen quadruped |
-| **Embodiment Scaling Laws**  | Morphology Encoder | ❌ | URMA (Attention-based) | **Cross-Class** (Quad/Hex/Hum) | Morpho/Dyna (Constraints) OOD| zero-shot to unseen quad/hum |
-| **One Policy to Run Them All** | Morphology Encoder | ❌ | URMA | **Cross-Class** (Quad/Hex/Hum) | Morphology(Topology) OOD | zero-shot to unseen quadruped |
-| **MorAL** | Morphology Encoder | ❌ | PPO (Morpho Net) | **In-Class** (Quadruped) | Terrain/ Dyna(mass) OOD | Zero-shot to real A1/Go1 |
-| **CrossLoco** | State-action Encoder | ❌ | Skill-Conditioned RL | **Cross-Class** (Quad/Hum) | Morpho OOD(Topology) | Language2Robot |
-| **CPG-RL** (ManyQuadrupeds) | State-action Encoder | ❌ | MLP + CPG Layer | **In-Class** (Quadruped1 12/16 DoF) | Morpho (Topology) / Dynamic (mass) OOD | zero-shot to unseen quadruped |
-| **Sequence Modeling Problem** | Morphology Encoder | ❌ | Embodiment-aware Transformer | **In-Class** (Quadruped) | Morpho OOD | Zero-shot to unseen quadruped |
-| **GenLoco** | State-action Encoder | ❌ | PPO | **In-Class** (Quadruped) | Morpho (Scale) / Dyna (Motor) OOD | Zero-shot to unseen quadruped |
-
-
-* Morphology OOD: 
-  * Topology: DoF of the robot/Cross class
-  * Scale: leg/base size
-  * Kinematic: 
-    * Elbow-Up / Inward-Knee
-    * Knee-Down / Outward-Knee
-    * Elbow-Up / Knee-Down
-    * All-Knee-Down(AKD)
-
-* Dynamic OOD: 
-  * Mass Distribution: Add payload -> CoM change/Body mass
-  * Motor: stiffness/damping/friction/armature
-  * Artificial Constraints: lock some joints
-
-* Terrain OOD:
-  * Unseen Terrain:
-  * Terrain property: Friction ...
-
-
 
 ### 🐕️Locomotion
 
